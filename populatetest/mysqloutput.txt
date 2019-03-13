@@ -1,0 +1,122 @@
+SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
+SLF4J: Defaulting to no-operation (NOP) logger implementation
+SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
+MLog initialization issue: slf4j found no binding or threatened to use its (dangerously silent) NOPLogger. We consider the slf4j library not found.
+Mar 13, 2019 1:06:59 PM com.mchange.v2.log.MLog 
+INFO: MLog clients using java 1.4+ standard logging.
+Mar 13, 2019 1:06:59 PM com.mchange.v2.c3p0.C3P0Registry 
+INFO: Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+Mar 13, 2019 1:06:59 PM com.mchange.v2.c3p0.impl.AbstractPoolBackedDataSource 
+INFO: Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> 2rvxwva1xhagpz11gru0l|174d20a, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> org.mariadb.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> true, identityToken -> 2rvxwva1xhagpz11gru0l|174d20a, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mariadb://localhost:3306/graph, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 3600, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 100, maxStatements -> 0, maxStatementsPerConnection -> 0, minPoolSize -> 3, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+4: 0
+2: 0
+3: 0
+10: 0
+1: 0
+5: 0
+9: 0
+6: 0
+8: 0
+7: 0
+Exception in thread "Thread-5" java.lang.IllegalStateException: Edge vertex 'prior' does not exist in schema 'PUBLIC'
+	at com.google.common.base.Preconditions.checkState(Preconditions.java:817)
+	at org.umlg.sqlg.structure.topology.TopologyManager.addLabelToEdge(TopologyManager.java:695)
+	at org.umlg.sqlg.structure.topology.EdgeLabel.ensureEdgeVertexLabelExist(EdgeLabel.java:768)
+	at org.umlg.sqlg.structure.topology.Schema.internalEnsureEdgeTableExists(Schema.java:344)
+	at org.umlg.sqlg.structure.topology.Schema.ensureEdgeLabelExist(Schema.java:251)
+	at org.umlg.sqlg.structure.topology.Topology.ensureEdgeLabelExist(Topology.java:836)
+	at org.umlg.sqlg.structure.topology.Topology.ensureEdgeLabelExist(Topology.java:809)
+	at org.umlg.sqlg.structure.SqlgVertex.addEdgeInternal(SqlgVertex.java:171)
+	at org.umlg.sqlg.structure.SqlgVertex.addEdge(SqlgVertex.java:137)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:47)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-9" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-13" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.Schema.ensureEdgeLabelExist(Schema.java:242)
+	at org.umlg.sqlg.structure.topology.Topology.ensureEdgeLabelExist(Topology.java:836)
+	at org.umlg.sqlg.structure.topology.Topology.ensureEdgeLabelExist(Topology.java:809)
+	at org.umlg.sqlg.structure.SqlgVertex.addEdgeInternal(SqlgVertex.java:171)
+	at org.umlg.sqlg.structure.SqlgVertex.addEdge(SqlgVertex.java:137)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:47)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-10" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-12" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-11" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-8" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-6" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-7" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
+Exception in thread "Thread-14" java.lang.RuntimeException: Timeout lapsed to acquire write lock for notification.
+	at org.umlg.sqlg.structure.topology.Topology.z_internalSqlWriteLock(Topology.java:619)
+	at org.umlg.sqlg.structure.topology.Topology.lock(Topology.java:584)
+	at org.umlg.sqlg.structure.topology.VertexLabel.ensurePropertiesExist(VertexLabel.java:411)
+	at org.umlg.sqlg.structure.topology.Schema.ensureVertexColumnsExist(Schema.java:488)
+	at org.umlg.sqlg.structure.topology.Topology.ensureVertexLabelPropertiesExist(Topology.java:902)
+	at org.umlg.sqlg.structure.SqlgElement.property(SqlgElement.java:239)
+	at org.umlg.sqlg.structure.SqlgVertex.property(SqlgVertex.java:211)
+	at com.nextgate.test.sqlgtest.CreateData.run(CreateData.java:43)
+	at java.lang.Thread.run(Thread.java:748)
