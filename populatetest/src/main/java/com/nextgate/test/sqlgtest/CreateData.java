@@ -1,7 +1,5 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * 
  */
 
 package com.nextgate.test.sqlgtest;
@@ -12,7 +10,8 @@ import org.apache.tinkerpop.gremlin.structure.Vertex;
 import org.umlg.sqlg.structure.SqlgGraph;
 
 /**
- *
+ * Class to load fictitious data to try to cause issues.
+ * 
  * @author kevin.schmidt
  */
 public class CreateData implements Runnable {
